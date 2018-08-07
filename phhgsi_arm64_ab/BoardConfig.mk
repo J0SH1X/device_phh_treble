@@ -3,3 +3,4 @@ include device/phh/treble/board-base.mk
 include device/phh/treble/judyln.mk
 
 BOARD_SYSTEMIMAGE_PARTITION_SIZE := 2147483648
+TARGET_COPY_OUT_VENDOR := vendor

@@ -28,6 +28,9 @@
 	<integer name="config_multiuserMaximumUsers">4</integer>
 	<bool name="config_enableMultiUserUI">true</bool>
 	-->
+	<!--Whether device supports double tap to wake -->
+	<bool name="config_supportDoubleTapWake">true</bool>
+
 
 	<string name="config_dozeComponent">com.android.systemui/com.android.systemui.doze.DozeService</string>
 </resources>

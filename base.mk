@@ -10,6 +10,7 @@ PRODUCT_COPY_FILES += \
 
 BOARD_PLAT_PRIVATE_SEPOLICY_DIR += device/phh/treble/sepolicy
 DEVICE_PACKAGE_OVERLAYS += device/phh/treble/overlay
+DEVICE_PACKAGE_OVERLAYS += device/phh/treble/overlay-lineage
 
 $(call inherit-product, vendor/hardware_overlay/overlay.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
@@ -35,8 +36,8 @@ PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
 PRODUCT_COPY_FILES += \
 	device/phh/treble/vndk-detect:system/bin/vndk-detect \
 	device/phh/treble/vndk.rc:system/etc/init/vndk.rc \
-	device/phh/treble/ld.config.26.txt:system/etc/ld.config.26.txt \
-	device/phh/treble/ld.config.27.txt:system/etc/ld.config.27.txt \
+	device/phh/treble/scripts/ld.config.26.txt:system/etc/ld.config.26.txt \
+	device/phh/treble/scripts/ld.config.27.txt:system/etc/ld.config.27.txt \
 
 #USB Audio
 PRODUCT_COPY_FILES += \
@@ -53,12 +54,12 @@ PRODUCT_PACKAGES += \
         NfcNci  
 
 PRODUCT_COPY_FILES += \
-	device/phh/treble/rw-system.sh:system/bin/rw-system.sh \
+	device/phh/treble/scripts/rw-system.sh:system/bin/rw-system.sh \
 	device/phh/treble/fixSPL/getSPL.arm:system/bin/getSPL
 
 PRODUCT_COPY_FILES += \
-	device/phh/treble/empty:system/phh/empty \
-	device/phh/treble/phh-on-boot.sh:system/bin/phh-on-boot.sh
+	device/phh/treble/scripts/empty:system/phh/empty \
+	device/phh/treble/scripts/phh-on-boot.sh:system/bin/phh-on-boot.sh
 
 PRODUCT_PACKAGES += \
 	treble-environ-rc
@@ -71,3 +72,9 @@ PRODUCT_COPY_FILES += \
 	device/phh/treble/twrp/twrp.rc:system/etc/init/twrp.rc \
 	device/phh/treble/twrp/twrp.sh:system/bin/twrp.sh \
 	device/phh/treble/twrp/busybox-armv7l:system/bin/busybox_phh
+#TWRP
+PRODUCT_COPY_FILES += \
+	device/phh/treble/scripts/twrp_a:system/bin/twrp_a \
+	device/phh/treble/scripts/twrp_b:system/bin/twrp_b \
+	device/phh/treble/prebuilt/twrp.img:system/phh/twrp.img \
+	device/phh/treble/scripts/twrp.sh:system/bin/twrp.sh
